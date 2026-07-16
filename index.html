@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Peek Mee — The Fun Way to Create Engaging Story</title>
+  <meta name="description" content="Peek Mee is an Indonesian indie game studio creating engaging games and apps — game development, AR/VR, 3D art, and gamification." />
+  <link rel="icon" href="assets/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito+Sans:ital,opsz,wght@0,6..12,400;0,6..12,500;0,6..12,600;0,6..12,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ===================== NAV ===================== -->
+  <header class="nav" id="top">
+    <div class="nav__inner">
+      <button class="nav__burger" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <a href="#top" class="nav__logo-mobile" aria-label="Peek Mee home">
+        <img src="assets/logo.png" alt="Peek Mee" />
+        <span>Peek Mee</span>
+      </a>
+
+      <nav class="nav__menu" id="nav-menu">
+        <a href="#games" class="nav__link">Games</a>
+        <a href="#services" class="nav__link">Services</a>
+        <a href="#top" class="nav__logo" aria-label="Peek Mee home">
+          <img src="assets/logo.png" alt="Peek Mee" />
+        </a>
+        <a href="#about" class="nav__link">About</a>
+        <a href="#contact" class="nav__link">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===================== HERO ===================== -->
+    <section class="hero">
+      <div class="hero__bg" aria-hidden="true"></div>
+      <div class="hero__copy">
+        <h1 class="hero__title">The Fun Way to Create Engaging Story</h1>
+        <p class="hero__sub">Since 2022, Peek Mee has focused on creating engaging games and apps. We push our boundaries to create great experiences for players to indulge in.</p>
+        <a href="#games" class="btn btn--primary">View more</a>
+      </div>
+    </section>
+
+    <!-- ===================== SHOWREEL ===================== -->
+    <div class="showreel-wrap">
+      <button class="showreel" aria-label="Play showreel">
+        <div class="showreel__bg" aria-hidden="true"></div>
+        <span class="showreel__play">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.14v13.72a1 1 0 0 0 1.5.86l11-6.86a1 1 0 0 0 0-1.72l-11-6.86A1 1 0 0 0 8 5.14z"/></svg>
+        </span>
+      </button>
+    </div>
+
+    <div class="container">
+      <!-- ===================== GAMES ===================== -->
+      <section class="section" id="games">
+        <h2 class="section__title">Games</h2>
+        <div class="games">
+          <!-- Card 1: title | desc | photo -->
+          <article class="game-card game-card--1">
+            <div class="game-title" style="background-image:url('assets/game-dewe.png')"></div>
+            <div class="game-desc">
+              <div class="game-desc__bg" style="background-image:url('assets/game-r1-desc.jpg')"></div>
+              <p>A 2D side-scrolling game that tells the story of a man who is trapped in a room and he doesn't know what happened to him.</p>
+            </div>
+            <div class="game-photo"><img src="assets/game-r1-img.jpg" alt="Game artwork" /></div>
+          </article>
+
+          <!-- Card 2: photo | title | desc -->
+          <article class="game-card game-card--2">
+            <div class="game-photo"><img src="assets/game-r2-img.png" alt="Game artwork" /></div>
+            <div class="game-title game-title--accent" style="background-image:url('assets/game-ticoap.png')"></div>
+            <div class="game-desc">
+              <div class="game-desc__bg" style="background-image:url('assets/game-r2-desc.png')"></div>
+              <p>A point and click game that told a story about a girl that is struggling to find a job, she must make the right choices in her day-to-day life to ensure that she will get a job.</p>
+            </div>
+          </article>
+
+          <!-- Card 3: desc | photo | title -->
+          <article class="game-card game-card--3">
+            <div class="game-desc">
+              <div class="game-desc__bg" style="background-image:url('assets/game-r3-desc.png')"></div>
+              <p>A side-scrolling game that tells a story about a dream world where the player has to get out of there by following a mysterious figure.</p>
+            </div>
+            <div class="game-photo"><img src="assets/game-r3-img.png" alt="Game artwork" /></div>
+            <div class="game-title" style="background-image:url('assets/game-comma.png')"></div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ===================== SERVICES ===================== -->
+      <section class="section" id="services">
+        <h2 class="section__title">Services</h2>
+        <div class="services">
+          <article class="service-card">
+            <div class="service-card__icon"><span class="ico" style="--ico:url('assets/icons/gamepad.svg')"></span></div>
+            <div class="service-card__body">
+              <h3>Game Development</h3>
+              <p>We've got tons of experience in game development. No matter what game platform you're interested in, we're here to bring your vision to life.</p>
+            </div>
+          </article>
+          <article class="service-card">
+            <div class="service-card__icon"><span class="ico" style="--ico:url('assets/icons/vr.svg')"></span></div>
+            <div class="service-card__body">
+              <h3>AR/VR</h3>
+              <p>We can bring virtual interaction into the real world. We'll help you bring your ideas and vision to life with augmented and virtual reality.</p>
+            </div>
+          </article>
+          <article class="service-card">
+            <div class="service-card__icon"><span class="ico" style="--ico:url('assets/icons/dice.svg')"></span></div>
+            <div class="service-card__body">
+              <h3>3D Art</h3>
+              <p>We'll help you take your concept art and turn it into 3D, especially for your game. We're here to help you to bring your ideas to life.</p>
+            </div>
+          </article>
+          <article class="service-card">
+            <div class="service-card__icon"><span class="ico" style="--ico:url('assets/icons/puzzle.svg')"></span></div>
+            <div class="service-card__body">
+              <h3>Gamification</h3>
+              <p>We're here to help you make your app more user-friendly and come up with a way to make sure your employees learn in a fun and exciting way.</p>
+            </div>
+          </article>
+        </div>
+        <a href="#contact" class="btn btn--primary">Hire us</a>
+      </section>
+
+      <!-- ===================== WHO WE ARE ===================== -->
+      <section class="section" id="about">
+        <h2 class="section__title">Who We Are</h2>
+        <div class="story">
+          <div class="story__logo">
+            <img src="assets/logo.png" alt="Peek Mee logo" />
+          </div>
+          <div class="story__cta">
+            <p><strong>Peek Mee</strong> is an Indonesian indie game studio. Driven by our vision to create long lasting impact games. We push our boundaries in game development to create games that express our creativity through story, art, and fun gameplay.</p>
+          </div>
+          <a href="https://x.com" target="_blank" rel="noopener" class="story__social" aria-label="X (Twitter)">
+            <span class="ico" style="--ico:url('assets/icons/sq-x.svg')"></span>
+          </a>
+          <a href="https://instagram.com" target="_blank" rel="noopener" class="story__social" aria-label="Instagram">
+            <span class="ico" style="--ico:url('assets/icons/sq-instagram.svg')"></span>
+          </a>
+          <a href="https://linkedin.com" target="_blank" rel="noopener" class="story__social" aria-label="LinkedIn">
+            <span class="ico" style="--ico:url('assets/icons/sq-linkedin.svg')"></span>
+          </a>
+          <a href="mailto:contact@peekmee.com" class="story__social story__social--alt" aria-label="Email">
+            <span class="ico" style="--ico:url('assets/icons/sq-envelope.svg')"></span>
+          </a>
+        </div>
+      </section>
+    </div>
+
+    <!-- ===================== PROJECTS ===================== -->
+    <section class="section section--flush" id="projects">
+      <h2 class="section__title">Projects</h2>
+      <div class="projects">
+        <div class="project"><img src="assets/project-01.png" alt="Project" /></div>
+        <div class="project"><img src="assets/project-02.png" alt="Project" /></div>
+        <div class="project"><img src="assets/project-03.png" alt="Project" /></div>
+        <div class="project"><img src="assets/project-04.png" alt="Project" /></div>
+        <div class="project"><img src="assets/project-05.png" alt="Project" /></div>
+        <div class="project"><img src="assets/project-06.png" alt="Project" /></div>
+        <div class="project"><img src="assets/project-07.png" alt="Project" /></div>
+        <div class="project"><img src="assets/project-08.png" alt="Project" /></div>
+        <div class="project"><img src="assets/project-09.jpg" alt="Project" /></div>
+        <div class="project"><img src="assets/project-10.jpg" alt="Project" /></div>
+      </div>
+    </section>
+
+    <!-- ===================== CONTACT FORM ===================== -->
+    <section class="form-section" id="contact">
+      <div class="form-section__text">
+        <h2 class="section__title">Leave Us A Message</h2>
+        <p>Got a question, feedback, or just want to say hello? We'd love to hear from you! Whether you're a fan, a fellow developer, or someone interested in collaborating, don't hesitate to reach out. We're here to connect and share our passion for games with the world.</p>
+      </div>
+      <form class="contact-form" novalidate>
+        <div class="field">
+          <input type="text" name="name" id="f-name" placeholder="Your name" required />
+          <span class="field__error" data-for="f-name"></span>
+        </div>
+        <div class="field">
+          <input type="email" name="email" id="f-email" placeholder="Your email" required />
+          <span class="field__error" data-for="f-email"></span>
+        </div>
+        <div class="field">
+          <textarea name="message" id="f-message" placeholder="Your message to us" rows="6" required></textarea>
+          <span class="field__error" data-for="f-message"></span>
+        </div>
+        <button type="submit" class="btn btn--primary">Submit</button>
+        <p class="form-status" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <div class="footer__logo">
+            <img src="assets/logo.png" alt="Peek Mee" />
+            <span>Peek Mee</span>
+          </div>
+          <p class="footer__addr">Central Java, Indonesia</p>
+          <div class="footer__badges">
+            <a href="#" class="store-badge">
+              <span class="store-badge__mark">itch<span>.io</span></span>
+            </a>
+            <a href="#" class="store-badge">
+              <span class="ico store-badge__ico" style="--ico:url('assets/icons/steam.svg')"></span>
+              <span class="store-badge__label"><small>Wishlist on</small>Steam</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer__cols">
+          <nav class="footer__col">
+            <h4>Pages</h4>
+            <a href="#games">Games</a>
+            <a href="#services">Services</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+          </nav>
+          <nav class="footer__col">
+            <h4>Company</h4>
+            <a href="#">Blog</a>
+            <a href="#">Career</a>
+            <a href="#">Press</a>
+          </nav>
+          <nav class="footer__col">
+            <h4>Follow us here</h4>
+            <a href="https://instagram.com" target="_blank" rel="noopener"><span class="ico footer__ico" style="--ico:url('assets/icons/tw-instagram.svg')"></span>Instagram</a>
+            <a href="https://x.com" target="_blank" rel="noopener"><span class="ico footer__ico" style="--ico:url('assets/icons/tw-x.svg')"></span>Twitter</a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener"><span class="ico footer__ico" style="--ico:url('assets/icons/tw-linkedin.svg')"></span>LinkedIn</a>
+          </nav>
+        </div>
+      </div>
+
+      <hr class="footer__divider" />
+
+      <div class="footer__copy">
+        <span>© Peek Mee 2024. All rights reserved.</span>
+        <a href="mailto:contact@peekmee.com">contact@peekmee.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
