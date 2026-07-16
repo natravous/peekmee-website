@@ -8,6 +8,7 @@
   const nav = document.querySelector(".nav");
   const burger = document.querySelector(".nav__burger");
   const menu = document.getElementById("nav-menu");
+  const close = document.querySelector(".nav__close");
 
   function closeMenu() {
     nav.classList.remove("open");
@@ -19,25 +20,59 @@
       const open = nav.classList.toggle("open");
       burger.setAttribute("aria-expanded", String(open));
     });
-    // Close menu when a link is tapped
+    // Close menu when a link or the close button is tapped
     menu.addEventListener("click", function (e) {
       if (e.target.closest("a")) closeMenu();
     });
+    if (close) close.addEventListener("click", closeMenu);
     // Close on Escape / resize to desktop
     document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeMenu(); });
     window.addEventListener("resize", () => { if (window.innerWidth > 620) closeMenu(); });
   }
 
-  /* ---------- Showreel play ---------- */
+  /* ---------- Showreel: click-to-play YouTube embed ---------- */
   const showreel = document.querySelector(".showreel");
   if (showreel) {
-    showreel.addEventListener("click", function () {
-      // Placeholder: no video source in the design. Signal intent gracefully.
-      showreel.animate(
-        [{ transform: "scale(1)" }, { transform: "scale(0.98)" }, { transform: "scale(1)" }],
-        { duration: 220, easing: "ease-out" }
-      );
-      console.info("Showreel play clicked — hook up a video source here.");
+    // Accept a raw ID or any YouTube URL in data-video-id.
+    function youTubeId(raw) {
+      if (!raw) return "";
+      raw = raw.trim();
+      if (/^[\w-]{11}$/.test(raw)) return raw; // already an ID
+      const m = raw.match(/(?:youtu\.be\/|v=|\/embed\/|\/shorts\/)([\w-]{11})/);
+      return m ? m[1] : "";
+    }
+
+    const videoId = youTubeId(showreel.dataset.videoId);
+
+    // Use the real video thumbnail as the poster.
+    if (videoId) {
+      showreel.style.backgroundImage = "url(https://i.ytimg.com/vi/" + videoId + "/hqdefault.jpg)";
+      // Upgrade to high-res poster when it exists (YouTube returns a 120px stub if not).
+      const hi = new Image();
+      hi.onload = function () {
+        if (hi.naturalWidth > 120) {
+          showreel.style.backgroundImage = "url(https://i.ytimg.com/vi/" + videoId + "/maxresdefault.jpg)";
+        }
+      };
+      hi.src = "https://i.ytimg.com/vi/" + videoId + "/maxresdefault.jpg";
+    }
+
+    showreel.addEventListener("click", function play() {
+      if (showreel.classList.contains("playing")) return;
+      if (!videoId) {
+        console.info("Showreel: set data-video-id on .showreel to embed a video.");
+        return;
+      }
+      const iframe = document.createElement("iframe");
+      iframe.src =
+        "https://www.youtube-nocookie.com/embed/" + videoId +
+        "?autoplay=1&rel=0&modestbranding=1&playsinline=1";
+      iframe.title = "Peek Mee showreel";
+      iframe.allow =
+        "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+      iframe.allowFullscreen = true;
+      showreel.appendChild(iframe);
+      showreel.classList.add("playing");
     });
   }
 

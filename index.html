@@ -16,14 +16,13 @@
   <!-- ===================== NAV ===================== -->
   <header class="nav" id="top">
     <div class="nav__inner">
-      <button class="nav__burger" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-menu">
-        <span></span><span></span><span></span>
-      </button>
-
       <a href="#top" class="nav__logo-mobile" aria-label="Peek Mee home">
         <img src="assets/logo.png" alt="Peek Mee" />
-        <span>Peek Mee</span>
       </a>
+
+      <button class="nav__burger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
+        <span></span><span></span><span></span>
+      </button>
 
       <nav class="nav__menu" id="nav-menu">
         <a href="#games" class="nav__link">Games</a>
@@ -33,6 +32,9 @@
         </a>
         <a href="#about" class="nav__link">About</a>
         <a href="#contact" class="nav__link">Contact</a>
+        <button class="nav__close" aria-label="Close menu">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
       </nav>
     </div>
   </header>
@@ -48,14 +50,16 @@
       </div>
     </section>
 
-    <!-- ===================== SHOWREEL ===================== -->
+    <!-- ===================== SHOWREEL =====================
+         To use your own video, replace the value of data-video-id below with
+         your YouTube video ID (the part after "watch?v=" or "youtu.be/").
+         e.g. data-video-id="dQw4w9WgXcQ"  ← swap this one string. -->
     <div class="showreel-wrap">
-      <button class="showreel" aria-label="Play showreel">
-        <div class="showreel__bg" aria-hidden="true"></div>
-        <span class="showreel__play">
+      <div class="showreel" data-video-id="aqz-KE-bpKQ">
+        <button type="button" class="showreel__play" aria-label="Play showreel">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.14v13.72a1 1 0 0 0 1.5.86l11-6.86a1 1 0 0 0 0-1.72l-11-6.86A1 1 0 0 0 8 5.14z"/></svg>
-        </span>
-      </button>
+        </button>
+      </div>
     </div>
 
     <div class="container">
