@@ -489,6 +489,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .contact-form .btn { align-self: center; margin-top: 8px; }
 .form-status { font-size: 16px; font-weight: 600; text-align: center; min-height: 24px; }
 .form-status.ok { color: #2e7d32; }
+.form-status.error { color: #c62828; }
 
 /* ==========================================================================
    FOOTER

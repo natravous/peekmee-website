@@ -110,7 +110,7 @@
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       status.textContent = "";
-      status.classList.remove("ok");
+      status.classList.remove("ok", "error");
 
       let ok = true;
       form.querySelectorAll("input, textarea").forEach((el) => {
@@ -123,17 +123,43 @@
         return;
       }
 
-      // No backend in this static build — simulate a successful send.
+      // Send via FormSubmit.co, which forwards the message to the studio inbox.
+      // NOTE: the first-ever submission triggers a one-time activation email
+      // to this address — it must be clicked before messages are delivered.
       const btn = form.querySelector("button[type=submit]");
       btn.disabled = true;
       btn.textContent = "Sending…";
-      setTimeout(function () {
-        form.reset();
-        btn.disabled = false;
-        btn.textContent = "Submit";
-        status.textContent = "Thanks! Your message has been sent. We'll be in touch soon.";
-        status.classList.add("ok");
-      }, 700);
+      status.classList.remove("error");
+
+      fetch("https://formsubmit.co/ajax/contact@peekmee.com", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          name: form.querySelector("#f-name").value.trim(),
+          email: form.querySelector("#f-email").value.trim(),
+          message: form.querySelector("#f-message").value.trim(),
+          _subject: "New message from the Peek Mee website",
+          _template: "table",
+          _captcha: "false",
+        }),
+      })
+        .then(function (res) {
+          if (!res.ok) throw new Error("HTTP " + res.status);
+          return res.json();
+        })
+        .then(function () {
+          form.reset();
+          status.textContent = "Thanks! Your message has been sent. We'll be in touch soon.";
+          status.classList.add("ok");
+        })
+        .catch(function () {
+          status.textContent = "Sorry, something went wrong sending your message. Please try again, or email us at contact@peekmee.com.";
+          status.classList.add("error");
+        })
+        .finally(function () {
+          btn.disabled = false;
+          btn.textContent = "Submit";
+        });
     });
   }
 
