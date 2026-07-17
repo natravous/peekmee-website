@@ -205,9 +205,12 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   position: relative;
   width: 936px;
   max-width: 100%;
-  aspect-ratio: 936 / 526;
+  /* Exact 16:9 so the embedded video fills the frame with no black bars.
+     The orange ring is a box-shadow (not a border) so it doesn't eat into
+     the 16:9 area — a border would leave the video pillarboxed. */
+  aspect-ratio: 16 / 9;
   margin-top: -88px;
-  border: 6px solid var(--orange);
+  box-shadow: 0 0 0 6px var(--orange);
   border-radius: 24px;
   overflow: hidden;
   display: grid;
@@ -659,7 +662,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   .hero__sub { font-size: 18px; line-height: 26px; }
   .btn { font-size: 18px; }
 
-  .showreel { margin-top: -64px; aspect-ratio: 380 / 214; }
+  .showreel { margin-top: -64px; }
 
   /* Games: title image + description only (photo hidden), stacked */
   .game-card--1, .game-card--2, .game-card--3 {

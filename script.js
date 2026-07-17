@@ -131,7 +131,7 @@
       btn.textContent = "Sending…";
       status.classList.remove("error");
 
-      fetch("https://formsubmit.co/ajax/contact@peekmee.com", {
+      fetch("https://formsubmit.co/ajax/59bbfe290866842f69a0969fa08bc8a5", {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify({
