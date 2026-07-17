@@ -249,7 +249,14 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   height: 100%;
   border: 0;
 }
-.showreel.playing { cursor: default; background-image: none; }
+.showreel.playing { cursor: default; background-image: none; background-color: #000; }
+.showreel.playing iframe {
+  /* The showreel upload has thin black pillars baked into the footage, so
+     overscan the player slightly and let the frame crop them off. Anchored
+     to the bottom edge to keep the player controls fully visible. */
+  transform: scale(1.04);
+  transform-origin: 50% 100%;
+}
 .showreel.playing::after { display: none; }
 .showreel.playing .showreel__play { display: none; }
 
