@@ -1,0 +1,8 @@
+{
+  "name": "Peek Mee — Build Web Components",
+  "id": "peekmee-build-web-components",
+  "api": "1.0.0",
+  "main": "code.js",
+  "editorType": ["figma"],
+  "documentAccess": "dynamic-page"
+}
