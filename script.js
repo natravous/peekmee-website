@@ -173,19 +173,23 @@
     if (href && href.startsWith("#")) linkFor[href.slice(1)] = a;
   });
 
+  const hero = document.querySelector(".hero");
+
   if ("IntersectionObserver" in window && sections.length) {
     const obs = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            Object.values(linkFor).forEach((a) => a.classList.remove("active"));
-            const a = linkFor[entry.target.id];
-            if (a) a.classList.add("active");
-          }
+          if (!entry.isIntersecting) return;
+          Object.values(linkFor).forEach((a) => a.classList.remove("active"));
+          // No link highlighted while the hero is on screen
+          if (entry.target === hero) return;
+          const a = linkFor[entry.target.id];
+          if (a) a.classList.add("active");
         });
       },
       { rootMargin: "-45% 0px -50% 0px" }
     );
     sections.forEach((s) => obs.observe(s));
+    if (hero) obs.observe(hero);
   }
 })();

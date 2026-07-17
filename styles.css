@@ -374,6 +374,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   place-items: center;
   padding: 16px;
 }
+.story__logo a, .footer__logo a { display: flex; }
 .story__logo img { width: 136px; height: 136px; object-fit: contain; }
 .story__cta {
   grid-column: 2 / 5;
