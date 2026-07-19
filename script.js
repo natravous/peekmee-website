@@ -158,10 +158,14 @@
         })
         .finally(function () {
           btn.disabled = false;
-          btn.textContent = "Submit";
+          btn.textContent = "Send message";
         });
     });
   }
+
+  /* ---------- Keep the footer copyright year current ---------- */
+  const yearEl = document.getElementById("copyright-year");
+  if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 
   /* ---------- Active nav link on scroll ---------- */
   const sections = ["games", "services", "about", "contact"]

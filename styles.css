@@ -278,6 +278,18 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .game-card--2 { grid-template-columns: 264fr 552fr 264fr; grid-template-areas: "photo title desc"; }
 .game-card--3 { grid-template-columns: 264fr 264fr 552fr; grid-template-areas: "desc photo title"; }
 
+/* Screen-reader-only text: hidden visually, still read by AT and indexed by search engines */
+.visually-hidden {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
 .game-title { grid-area: title; }
 .game-photo { grid-area: photo; }
 .game-desc  { grid-area: desc; }
@@ -463,12 +475,49 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   flex-direction: column;
   gap: 16px;
 }
-.field { display: flex; flex-direction: column; }
+.field { position: relative; display: flex; flex-direction: column; }
+
+/* Floating label: rests inside the field like a placeholder, then floats up
+   onto the top border when the field is focused or has content. */
+.field label {
+  position: absolute;
+  left: 12px;
+  top: 9px;
+  padding: 0 4px;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--neutral-30);
+  background: transparent;
+  pointer-events: none;
+  transform-origin: left center;
+  transition: transform .15s ease, color .15s ease;
+}
+/* Floated: the label straddles the top stroke. A split background — page colour
+   on the top half, field colour on the bottom half — blends seamlessly on both
+   sides and masks only the border line, so the stroke reads as cleanly notched
+   with no visible box. */
+.field input:focus ~ label,
+.field input:not(:placeholder-shown) ~ label,
+.field textarea:focus ~ label,
+.field textarea:not(:placeholder-shown) ~ label {
+  transform: translateY(-21px) scale(.8);
+  background: linear-gradient(to bottom, var(--neutral-100) 50%, var(--neutral-90) 50%);
+}
+/* Match the notch to the field's red fill while it's in an error state. */
+.field input.invalid:focus ~ label,
+.field input.invalid:not(:placeholder-shown) ~ label,
+.field textarea.invalid:focus ~ label,
+.field textarea.invalid:not(:placeholder-shown) ~ label {
+  background: linear-gradient(to bottom, var(--neutral-100) 50%, #fff2f2 50%);
+}
+.field input:focus ~ label,
+.field textarea:focus ~ label { color: var(--orange); }
+
 .contact-form input,
 .contact-form textarea {
   width: 100%;
   background: var(--neutral-90);
-  border: 1px solid transparent;
+  border: 2px solid transparent;
   border-radius: 8px;
   padding: 8px 16px;
   font-family: inherit;
@@ -485,10 +534,9 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .contact-form textarea:focus {
   outline: none;
   border-color: var(--orange);
-  box-shadow: 0 0 0 3px rgba(255,167,74,.25);
 }
 .contact-form input.invalid,
-.contact-form textarea.invalid { border-color: #e5484d; background: #fff2f2; }
+.contact-form textarea.invalid { border: 1px solid #e5484d; background: #fff2f2; }
 .field__error {
   color: #e5484d;
   font-size: 13px;
