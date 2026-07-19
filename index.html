@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Peek Mee — The Fun Way to Create Engaging Story</title>
+  <title>Peek Mee — The Fun Way to Create Engaging Stories</title>
   <meta name="description" content="Peek Mee is an Indonesian indie game studio creating engaging games and apps — game development, AR/VR, 3D art, and gamification." />
   <link rel="icon" href="assets/logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -44,9 +44,9 @@
     <section class="hero">
       <div class="hero__bg" aria-hidden="true"></div>
       <div class="hero__copy">
-        <h1 class="hero__title">The Fun Way to Create Engaging Story</h1>
-        <p class="hero__sub">Since 2022, Peek Mee has focused on creating engaging games and apps. We push our boundaries to create great experiences for players to indulge in.</p>
-        <a href="#games" class="btn btn--primary">View more</a>
+        <h1 class="hero__title">The Fun Way to Create Engaging Stories</h1>
+        <p class="hero__sub">Since 2022, Peek Mee has focused on creating engaging games and apps. We push our boundaries to build experiences players get lost in.</p>
+        <a href="#games" class="btn btn--primary">See our games</a>
       </div>
     </section>
 
@@ -69,7 +69,7 @@
         <div class="games">
           <!-- Card 1: title | desc | photo -->
           <article class="game-card game-card--1">
-            <div class="game-title" style="background-image:url('assets/game-dewe.png')"></div>
+            <div class="game-title" style="background-image:url('assets/game-dewe.png')"><h3 class="visually-hidden">DEWE</h3></div>
             <div class="game-desc">
               <div class="game-desc__bg" style="background-image:url('assets/game-r1-desc.jpg')"></div>
               <p>A 2D side-scrolling game that tells the story of a man who is trapped in a room and he doesn't know what happened to him.</p>
@@ -80,7 +80,7 @@
           <!-- Card 2: photo | title | desc -->
           <article class="game-card game-card--2">
             <div class="game-photo"><img src="assets/game-r2-img.png" alt="Game artwork" /></div>
-            <div class="game-title game-title--accent" style="background-image:url('assets/game-ticoap.png')"></div>
+            <div class="game-title game-title--accent" style="background-image:url('assets/game-ticoap.png')"><h3 class="visually-hidden">The Life Cycle of an Unemployed Person (TLCOAUP)</h3></div>
             <div class="game-desc">
               <div class="game-desc__bg" style="background-image:url('assets/game-r2-desc.png')"></div>
               <p>A point and click game that told a story about a girl that is struggling to find a job, she must make the right choices in her day-to-day life to ensure that she will get a job.</p>
@@ -94,7 +94,7 @@
               <p>A side-scrolling game that tells a story about a dream world where the player has to get out of there by following a mysterious figure.</p>
             </div>
             <div class="game-photo"><img src="assets/game-r3-img.png" alt="Game artwork" /></div>
-            <div class="game-title" style="background-image:url('assets/game-comma.png')"></div>
+            <div class="game-title" style="background-image:url('assets/game-comma.png')"><h3 class="visually-hidden">Comma</h3></div>
           </article>
         </div>
       </section>
@@ -107,32 +107,32 @@
             <div class="service-card__icon"><span class="ico" style="--ico:url('assets/icons/gamepad.svg')"></span></div>
             <div class="service-card__body">
               <h3>Game Development</h3>
-              <p>We've got tons of experience in game development. No matter what game platform you're interested in, we're here to bring your vision to life.</p>
+              <p>PC, mobile, console, or web — we've shipped across platforms and take your game from first prototype all the way to launch.</p>
             </div>
           </article>
           <article class="service-card">
             <div class="service-card__icon"><span class="ico" style="--ico:url('assets/icons/vr.svg')"></span></div>
             <div class="service-card__body">
               <h3>AR/VR</h3>
-              <p>We can bring virtual interaction into the real world. We'll help you bring your ideas and vision to life with augmented and virtual reality.</p>
+              <p>Interactive AR and VR experiences that bring virtual worlds into real spaces — for play, products, or hands-on training.</p>
             </div>
           </article>
           <article class="service-card">
             <div class="service-card__icon"><span class="ico" style="--ico:url('assets/icons/dice.svg')"></span></div>
             <div class="service-card__body">
               <h3>3D Art</h3>
-              <p>We'll help you take your concept art and turn it into 3D, especially for your game. We're here to help you to bring your ideas to life.</p>
+              <p>We turn concept art into game-ready 3D models, characters, and environments built to fit your world.</p>
             </div>
           </article>
           <article class="service-card">
             <div class="service-card__icon"><span class="ico" style="--ico:url('assets/icons/puzzle.svg')"></span></div>
             <div class="service-card__body">
               <h3>Gamification</h3>
-              <p>We're here to help you make your app more user-friendly and come up with a way to make sure your employees learn in a fun and exciting way.</p>
+              <p>We make apps more engaging and turn training into something your team actually wants to finish.</p>
             </div>
           </article>
         </div>
-        <a href="#contact" class="btn btn--primary">Hire us</a>
+        <a href="#contact" class="btn btn--primary">Start a project</a>
       </section>
 
       <!-- ===================== WHO WE ARE ===================== -->
@@ -186,22 +186,25 @@
     <section class="form-section" id="contact">
       <div class="form-section__text">
         <h2 class="section__title">Leave Us A Message</h2>
-        <p>Got a question, feedback, or just want to say hello? We'd love to hear from you! Whether you're a fan, a fellow developer, or someone interested in collaborating, don't hesitate to reach out. We're here to connect and share our passion for games with the world.</p>
+        <p>Got a question, feedback, or a collaboration in mind? We'd love to hear from you — drop us a message and we'll be in touch.</p>
       </div>
       <form class="contact-form" novalidate>
         <div class="field">
-          <input type="text" name="name" id="f-name" placeholder="Your name" required />
+          <input type="text" name="name" id="f-name" placeholder=" " required />
+          <label for="f-name">Your name</label>
           <span class="field__error" data-for="f-name"></span>
         </div>
         <div class="field">
-          <input type="email" name="email" id="f-email" placeholder="Your email" required />
+          <input type="email" name="email" id="f-email" placeholder=" " required />
+          <label for="f-email">Your email</label>
           <span class="field__error" data-for="f-email"></span>
         </div>
         <div class="field">
-          <textarea name="message" id="f-message" placeholder="Your message to us" rows="6" required></textarea>
+          <textarea name="message" id="f-message" placeholder=" " rows="6" required></textarea>
+          <label for="f-message">Your message to us</label>
           <span class="field__error" data-for="f-message"></span>
         </div>
-        <button type="submit" class="btn btn--primary">Submit</button>
+        <button type="submit" class="btn btn--primary">Send message</button>
         <p class="form-status" role="status" aria-live="polite"></p>
       </form>
     </section>
@@ -256,7 +259,7 @@
       <hr class="footer__divider" />
 
       <div class="footer__copy">
-        <span>© Peek Mee 2024. All rights reserved.</span>
+        <span>© Peek Mee <span id="copyright-year">2026</span>. All rights reserved.</span>
         <a href="mailto:contact@peekmee.com">contact@peekmee.com</a>
       </div>
     </div>
