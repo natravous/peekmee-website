@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Page Not Found — Peek Mee</title>
+  <meta name="description" content="The page you're looking for doesn't exist. Head back to the Peek Mee home page to explore our games and services." />
+  <meta name="robots" content="noindex" />
+  <link rel="icon" href="assets/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito+Sans:ital,opsz,wght@0,6..12,400;0,6..12,500;0,6..12,600;0,6..12,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ===================== NAV ===================== -->
+  <header class="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo-mobile" aria-label="Peek Mee home">
+        <img src="assets/logo.png" alt="Peek Mee" />
+      </a>
+
+      <button class="nav__burger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav__menu" id="nav-menu">
+        <a href="index.html#games" class="nav__link">Games</a>
+        <a href="index.html#services" class="nav__link">Services</a>
+        <a href="index.html" class="nav__logo" aria-label="Peek Mee home">
+          <img src="assets/logo.png" alt="Peek Mee" />
+        </a>
+        <a href="index.html#about" class="nav__link">About</a>
+        <a href="index.html#contact" class="nav__link">Contact</a>
+        <button class="nav__close" aria-label="Close menu">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===================== 404 ===================== -->
+    <section class="error404">
+      <div class="error404__inner">
+        <div class="error404__art">
+          <img src="assets/404-cat.png" alt="A sleeping orange cat curled up on a cushion beside a Peek Mee mug, books, and a small potted plant" />
+        </div>
+        <h1 class="error404__title">Sssttt&hellip; you don&rsquo;t want to wake up the sleeping cat, do you?</h1>
+        <a href="index.html" class="btn btn--primary">Go here instead</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <div class="footer__logo">
+            <a href="index.html" aria-label="Back to home">
+              <img src="assets/logo.png" alt="Peek Mee" />
+            </a>
+            <span>Peek Mee</span>
+          </div>
+          <p class="footer__addr">Central Java, Indonesia</p>
+          <div class="footer__badges">
+            <a href="https://peek-mee.itch.io/" class="store-badge" aria-label="itch.io">
+              <span class="ico store-badge__ico" style="--ico:url('assets/icons/itchio.svg')"></span>
+              <span class="store-badge__text">itch.io</span>
+            </a>
+            <a href="https://store.steampowered.com/search/?publisher=Peek%20Mee" class="store-badge" aria-label="Steam">
+              <span class="ico store-badge__ico" style="--ico:url('assets/icons/steam.svg')"></span>
+              <span class="store-badge__text store-badge__text--caps">Steam<sup>®</sup></span>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer__cols">
+          <nav class="footer__col">
+            <h4>Pages</h4>
+            <a href="index.html#games">Games</a>
+            <a href="index.html#services">Services</a>
+            <a href="index.html#about">About</a>
+            <a href="index.html#contact">Contact</a>
+          </nav>
+          <nav class="footer__col">
+            <h4>Company</h4>
+            <a href="#">Blog</a>
+            <a href="#">Career</a>
+            <a href="https://press.peekmee.com" target="_blank" rel="noopener">Press</a>
+          </nav>
+          <nav class="footer__col">
+            <a href="https://www.instagram.com/peekmeeapp/" target="_blank" rel="noopener"><span class="ico footer__ico" style="--ico:url('assets/icons/tw-instagram.svg')"></span>Instagram</a>
+            <a href="https://x.com/PeekMeeApp" target="_blank" rel="noopener"><span class="ico footer__ico" style="--ico:url('assets/icons/tw-x.svg')"></span>Twitter</a>
+            <a href="https://www.linkedin.com/company/peek-mee" target="_blank" rel="noopener"><span class="ico footer__ico" style="--ico:url('assets/icons/tw-linkedin.svg')"></span>LinkedIn</a>
+          </nav>
+        </div>
+      </div>
+
+      <hr class="footer__divider" />
+
+      <div class="footer__copy">
+        <span>© Peek Mee <span id="copyright-year">2026</span>. All rights reserved.</span>
+        <a href="mailto:contact@peekmee.com">contact@peekmee.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
